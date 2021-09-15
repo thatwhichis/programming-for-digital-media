@@ -9,4 +9,5 @@
 ## Processing Sketches
 
  - [Work 1](sketches/dynamic/)
+ <iframe src="https://thatwhichis.github.io/programming-for-digital-media/sketches/dynamic/" style="width=60%"></iframe>
  - Work 2
