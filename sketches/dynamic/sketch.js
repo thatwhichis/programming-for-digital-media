@@ -1,63 +1,50 @@
-let random, max = 3;
-
-
-let x, y;
+let distX, distY, halfWidth, halfHeight;
+let size = 401;
+let color = 100;
 
 function setup() {
-    // Create the canvas
-    createCanvas(720, 400);
+    createCanvas(size, size);
+    background(color);
 
-    x = width / 50;
-    y = height / 50;
+    halfWidth = width / 2;
+    halfHeight = height / 2;
 
-    mouseClicked();
+    noLoop();
+
+    update(50, 50);
+}
+
+function update(x, y) {
+    distX = Math.abs(x - width / 2);
+    distY = Math.abs(y - height / 2);
+    
+    if (distX != 0 && distY != 0) {
+        redraw();
+    }
 }
 
 function draw() {
-    /*background(100);
+    background(color);
 
-    switch(random)
-    {
-        case 0:
-            ellipse(100, 100, 50, 50);
-            break;
-        case 1:
-            square(75, 75, 50);
-            break;
-        case 2:
-        default:
-            point(100, 100);
-            break;
+    translate(halfWidth, halfHeight);
+
+    // Moved here outside the loop 20210913_1732
+    strokeWeight(distX);
+    stroke(map(distY, 0, halfHeight, 0, 255));
+
+    for (let y = -halfHeight; y < halfHeight; y++ ) {
+        for (let x = -halfWidth; x < halfWidth; x++) {
+            if (x % distX == 0 && y % distY == 0) {
+                // This is already graded, but in hindsight,
+                // could move these out of the loop
+                // strokeWeight(distX);
+                // stroke(map(distY, 0, halfHeight, 0, 255));
+                point(x, y);
+            }
+        }
     }
-    */
-    /* alternate:
-
-    if (random == 0) { ellipse(100, 100, 50, 50); }
-    else if (random == 1) { square(75, 75, 50); }
-    else if (random == 2) { point(100, 100); }
-    else { point(100, 100); }
-    */
 }
 
-function mouseClicked() {
-    for (y = height / 50; y > 0; y--) {
-        for (x = width / 50; x > 0; x--) {
-            fill(x * 10 * y);
-            circle(50 * x, 50 * y, 100);
-        }
-    }
-
-    /*do {
-        fill(x * 10 * y);
-        circle(50 * x, 50 * y, 100);
-        x -= 1;
-        if (x < 0) {
-            y -= 1;
-            x = width;
-        }
-    } while (y >= 0);
-    */
-
-    // random = Math.floor(Math.random() * max);
-    // console.log(random);
+function mouseMoved() {
+    update(mouseX, mouseY);
 }
