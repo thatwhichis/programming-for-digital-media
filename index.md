@@ -8,7 +8,7 @@
 
 ### Lab 1
 
- - [![1-1](/images/20210910_1636_1-1.PNG)](./index-demo.html)
+[![1-1](/images/20210910_1636_1-1.PNG | width=){:height="100px" width="100px"}](./index-demo.html)
 
  - [Work 1](sketches/dynamic/)
 
