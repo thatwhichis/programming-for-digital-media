@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\dig5508-f21-thatwhichis"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "programming-for-digital-media"
+	}
+}
