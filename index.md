@@ -1,7 +1,5 @@
 # Lab Portfolio
 
-## Processing Sketches
-
 ### Lab 1
 
 Lab 1 was a series of exercises from the end of [Eloquent JavaScript Chapter 2: Program Structure](https://eloquentjavascript.net/02_program_structure.html) with modified requirements to use [p5.js](https://p5js.org/) to visualize exercise output.
