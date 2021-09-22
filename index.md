@@ -13,7 +13,7 @@ Lab 1 was a series of exercises from the end of [Eloquent JavaScript Chapter 2: 
 
 ### Lab 2
 
-Lab 2 was an exercise to use [GitHub Pages](https://pages.github.com/) functionality to generate a small portfolio of projects implemented for Programming for Digital Media.
+Lab 2 was an exercise using [GitHub Pages](https://pages.github.com/) functionality to generate a small portfolio of projects implemented for Programming for Digital Media.
 
 (Click thumbnail to open Lab 2; link is recursive.)
 
