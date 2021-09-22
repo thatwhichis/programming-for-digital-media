@@ -4,7 +4,7 @@
 
 Lab 1 was a series of exercises from the end of [Eloquent JavaScript Chapter 2: Program Structure](https://eloquentjavascript.net/02_program_structure.html) with modified requirements to use [p5.js](https://p5js.org/) to visualize exercise output.
 
-(Click any thumbnail to open a p5.js JavaScript implementation of the exercise.)
+(Click a thumbnail to open the p5.js JavaScript exercise implementation.)
 
 [![1-1](/images/20210910_1636_1-1.PNG){:height="100px" width="100px"}](./sketches/labs/1/1_1/) 
 [![1-2](/images/20210910_1637_1-2.PNG){:height="100px" width="100px"}](./sketches/labs/1/1_2/) 
