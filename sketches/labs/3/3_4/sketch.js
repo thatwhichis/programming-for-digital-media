@@ -8,6 +8,7 @@
 // 6. Color is user's selected color when emitter is created
 // 7. "the drawing should support multiple particles" - does this mean emitters?
 // 7. (con't) - if this just means particles, is supported by single emitter
+// 7. (con't) - is this satisfied by allowing the user to choose particle color?
 // 8. Each particle is tracked in an array and updated each frame
 // 9. Each particle has a direction (vector) in Shape.js
 // 10. direction is used to update particle positions
