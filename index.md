@@ -19,6 +19,17 @@ Lab 2 was an exercise using [GitHub Pages](https://pages.github.com/) functional
 
 [![2](/images/20210922_0914_2.PNG){:height="100px" width="100px"}](./)
 
+### Lab 3
+
+Lab 3 was a series of exercises using arrays and objects to iterate on development of a simple drawing program.
+
+(Click a thumbnail to open the p5.js JavaScript exercise implementation.)
+
+[![1-1](/images/20210926_1531_3-1.PNG){:height="100px" width="100px"}](./sketches/labs/3/3_1/) 
+[![1-2](/images/20210926_1507_3-2.PNG){:height="100px" width="100px"}](./sketches/labs/3/3_2/) 
+[![1-3](/images/20210926_1445_3-3.PNG){:height="100px" width="100px"}](./sketches/labs/3/3_3/) 
+[![1-4](/images/20210926_1423_3-4.PNG){:height="100px" width="100px"}](./sketches/labs/3/3_4/)
+
 ## About me
 - [My Site](https://www.thatwhichismedia.com/)
 - [Twitter](https://twitter.com/ThatWhichIsM)
