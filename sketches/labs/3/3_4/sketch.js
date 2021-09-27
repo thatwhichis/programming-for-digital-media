@@ -116,32 +116,35 @@ function draw() {
 // Called from both mousePressed and keyPressed
 function checkButtons() {
 
-    // Parse buttons array for collision
-    for (let i = 0; i < buttons.length; i++) {
-        if (buttons[i].checkCollision(mouseX, mouseY)) {
-            if (i < colours.length) {
-                if (colour != i) {
-                    buttons[colour].strokeColour = deselected;
-                    colour = i;
-                    buttons[colour].strokeColour = selected;
-                }
-            } else {
-                if (mode != i - colours.length) {
-                    if (drawable !== undefined && modes[mode] === "line") {
-                        drawables.push(drawable);
-                        drawable = undefined;
+    // If key is undefined, parse for button clicks
+    if (keye === undefined) {
+        // Parse buttons array for collision
+        for (let i = 0; i < buttons.length; i++) {
+            if (buttons[i].checkCollision(mouseX, mouseY)) {
+                if (i < colours.length) {
+                    if (colour != i) {
+                        buttons[colour].strokeColour = deselected;
+                        colour = i;
+                        buttons[colour].strokeColour = selected;
                     }
-                    buttons[mode + colours.length].strokeColour = deselected;
-                    mode = i - colours.length;
-                    buttons[i].strokeColour = selected;
+                } else {
+                    if (mode != i - colours.length) {
+                        if (drawable !== undefined && modes[mode] === "line") {
+                            drawables.push(drawable);
+                            drawable = undefined;
+                        }
+                        buttons[mode + colours.length].strokeColour = deselected;
+                        mode = i - colours.length;
+                        buttons[i].strokeColour = selected;
+                    }
                 }
+
+                // If the initial click is a button, don't perform drag/release
+                button = true;
+
+                // If a button returns collision, end mousePressed
+                return true;
             }
-
-            // If the initial click is a button, don't perform drag/release
-            button = true;
-
-            // If a button returns collision, end mousePressed
-            return true;
         }
     }
 
