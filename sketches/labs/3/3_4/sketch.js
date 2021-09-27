@@ -18,6 +18,7 @@ const bgColor = 128;
 const canvasHeight = 400, canvasWidth = 400;
 const defaultScale = 5;
 const fr = 30;
+const spacing = 30;
 
 let buttons = [];
 let colours = [];
@@ -54,8 +55,8 @@ function setup() {
 
     // Generate the three color selection buttons
     for (let i = 0; i < colours.length; i++) {
-        buttons.push(new Button(30 + (i + 1) * 30, 30,
-            { height: 20, width: 20, colour: colours[i],
+        buttons.push(new Button(spacing + (i + 1) * spacing, spacing,
+            { height: spacing - 10, width: spacing - 10, colour: colours[i],
             strokeColour: deselected }));
         if (i === colour) {
             buttons[i].strokeColour = selected;
@@ -64,9 +65,10 @@ function setup() {
 
     // Generate the tool selection buttons
     for (let i = 0; i < modes.length; i++) {
-        buttons.push(new Button(30, 30 + (i + 1) * 30,
-            { height: 20, width: 20, colour: color(200, 200, 200),
-            strokeColour: deselected, text: modes[i].charAt(0) } ));
+        buttons.push(new Button(spacing, spacing + (i + 1) * spacing,
+            { height: spacing - 10, width: spacing - 10,
+            colour: color(200, 200, 200), strokeColour: deselected,
+            text: modes[i].charAt(0) }));
         if (i === mode) {
             buttons[colours.length + i].strokeColour = selected;
         }
@@ -182,10 +184,10 @@ function mouseDragged() {
                 let distance = dist(mouseX, mouseY,
                     drawable.position.x,
                     drawable.position.y);
-                if (distance >= 5) {
+                if (distance >= defaultScale) {
                     drawable.scale = distance * 2;
                 } else {
-                    drawable.scale = 5;
+                    drawable.scale = defaultScale;
                 }
                 break;
         }
