@@ -30,6 +30,14 @@ Lab 3 was a series of exercises using arrays and objects to iterate on developme
 [![1-3](/images/20210926_1445_3-3.PNG){:height="100px" width="100px"}](./sketches/labs/3/3_3/) 
 [![1-4](/images/20210926_1423_3-4.PNG){:height="100px" width="100px"}](./sketches/labs/3/3_4/)
 
+### Lab 4
+
+Lab 4 was a single exercise in which we were encouraged to make a small game demonstrating progression.
+
+(Click the thumbnail to open the p5.js JavaScript exercise implementation.)
+
+[![1-1](/images/20211010_1809_4.PNG){:height="100px" width="100px"}](./sketches/labs/4/) 
+
 ## About me
 - [My Site](https://www.thatwhichismedia.com/)
 - [Twitter](https://twitter.com/ThatWhichIsM)
