@@ -137,8 +137,8 @@ function draw() {
     else if (mode === MODES.MAZE) {
         // Draw Maze - have to because background resets for player
         fill(0);
-        for (let y = 0; y < maze.Size.y; y++) {
-            for (let x = 0; x < maze.Size.x; x++) {
+        for (let y = 0; y < maze.Size; y++) {
+            for (let x = 0; x < maze.Size; x++) {
                 if (maze.Grid[y][x]) {
                     square(x * cell, y * cell, cell);
                 }
@@ -146,7 +146,7 @@ function draw() {
         }
 
         // Draw Tutorial in first level (first level is GRID + 2)
-        if (maze.Size.x < GRID + 4) {
+        if (maze.Size < GRID + 4) {
             fill(255);
             textSize(18);
             text("'w': up, 'a': left, 's': down, 'd': right", CANVAS / 2, cell / 2);
@@ -246,13 +246,13 @@ function shuffleMaze() {
     // Increase the maze grid size and shuffle based on player grid position
     // (This could change but currently Size returns a vector/sets a number)
     // Maze maxes out at MAX to keep scale reasonable
-    if (maze.Size.x < MAX) {
-        maze.Size = maze.Size.x + 2;
+    if (maze.Size < MAX) {
+        maze.Size += 2;
     }
     maze.shuffle(player.grid.x, player.grid.y);
 
     // Reset the cell size based on maze size
-    cell = CANVAS / maze.Size.x;
+    cell = CANVAS / maze.Size;
 
     // Set player size appropriate to the cell size and reposition
     player.size = cell * 0.66;

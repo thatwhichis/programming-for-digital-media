@@ -6,8 +6,6 @@ class Maze {
     _grid;
     _size;
 
-    _dimensions = { col: 0, row: 1}
-
     constructor(size) {
         if (size === undefined) { size = 0; }
 
@@ -19,7 +17,7 @@ class Maze {
     }
 
     get Size() {
-        return this._size;
+        return this._size.x;
     }
 
     get Grid() {
@@ -38,7 +36,8 @@ class Maze {
 
     shuffle(x, y) {
         // Reset the grid housing the maze
-        this._grid = new Array(this._size.y).fill(0)
+        // Fill the grid as true for wall draw test, grid test in step
+        this._grid = new Array(this._size.y).fill()
             .map(() => new Array(this._size.x).fill(true));
 
         // Reset the array tracking maze endings
@@ -50,43 +49,48 @@ class Maze {
     }
 
     step(y, x) {
-        // Set this step false (default/walls are true)
-        if (this._grid[y][x] !== false) {
-            this._grid[y][x] = false;
+        // Set this grid position false (default/walls are true)
+        this._grid[y][x] = false;
+
+        // Create and init array of directional position vectors for storage
+        let vectors = [];
+        for (let i = 0; i < 4; i++) {
+            vectors.push(createVector(0, 0));
         }
 
-        let vectors = [[0,0], [0,0], [0,0], [0,0]];
-
+        // Do this next part until available directions hit 0 for all
         while (true) {
             let direction = 0;
 
             // Check up
             if (y > 1 && this._grid[y - 2][x]) {
-                this.track(vectors, direction, this._dimensions.row, y - 2);
-                this.track(vectors, direction, this._dimensions.col, x);
+                vectors[direction].y = y - 2;
+                vectors[direction].x = x;
                 direction++;
             }
             // Check down
             if (y < this._grid.length - 2 && this._grid[y + 2][x]) {
-                this.track(vectors, direction, this._dimensions.row,  y + 2);
-                this.track(vectors, direction, this._dimensions.col, x);
+                vectors[direction].y = y + 2;
+                vectors[direction].x = x;
                 direction++;
             }
             // Check left
             if (x > 1 && this._grid[y][x - 2]) {
-                this.track(vectors, direction, this._dimensions.row, y);
-                this.track(vectors, direction, this._dimensions.col, x - 2);
+                vectors[direction].y = y;
+                vectors[direction].x = x - 2;
                 direction++;
             }
             // Check right
             if (x < this._grid[y].length - 2 && this._grid[y][x + 2]) {
-                this.track(vectors, direction, this._dimensions.row, y);
-                this.track(vectors, direction, this._dimensions.col, x + 2);
+                vectors[direction].y = y;
+                vectors[direction].x = x + 2;
                 direction++;
             }
 
-            // Look for passage ends
+            // No available directions left
             if (direction === 0) {
+
+                // Look for passage ends
                 let blocked = 0;
 
                 // Check up
@@ -106,29 +110,17 @@ class Maze {
                 break;
             }
 
-            // Set the next step direction
+            // Set the next step direction from available directions
             direction = Math.floor(random(direction));
 
-            // Set path false (default/walls are true)
+            // Set connecting grid position false (default/walls are true)
             this._grid
-                [(this.track(vectors, direction, this._dimensions.row) + y) / 2]
-                [(this.track(vectors, direction, this._dimensions.col) + x) / 2]
+                [(vectors[direction].y + y) / 2]
+                [(vectors[direction].x + x) / 2]
                     = false;
 
             // Proceed to next step based on direction vector
-            this.step(
-                this.track(vectors, direction, this._dimensions.row),
-                this.track(vectors, direction, this._dimensions.col)
-            );
+            this.step(vectors[direction].y, vectors[direction].x);
         }
-    }
-
-    track = function(vector, direction, dimension, value) {
-        // Determines whether the function is setting or simply retrieving value
-        if (value !== undefined) {
-            vector[direction][dimension] = value;
-        }
-
-        return vector[direction][dimension];
     }
 }
