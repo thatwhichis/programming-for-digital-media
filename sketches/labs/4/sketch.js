@@ -51,6 +51,13 @@ function setup () {
     // Initialize maze
     maze = new Maze(GRID);
 
+    // Initialize target
+    target = {
+        grid: createVector(0, 0),
+        position: createVector(0, 0),
+        color: color(0, 230, 200)
+    };
+
     // Initialize player
     player = {
         grid: createVector(1, 1),
@@ -58,13 +65,6 @@ function setup () {
         target: createVector(1, 1),
         state: STATE.IDLE,
         color: 255
-    };
-
-    // Initialize target
-    target = {
-        grid: createVector(0, 0),
-        position: createVector(0, 0),
-        color: color(0, 230, 200)
     };
 
     // Initialize inputs array to parse held keys
@@ -101,22 +101,30 @@ function update() {
             mode = MODES.TEXT;
     }
 
-    // Some kluge in here; probably worth refactor but wanted it done
-    if (mode === MODES.MAZE && player.state === STATE.MOVING) {
-        if (player.grid.x !== player.target.x ||
-            player.grid.y !== player.target.y) {
-            let targetX = player.target.x * cell + cell / 2;
-            let targetY = player.target.y * cell + cell / 2;
-            player.position.x += (targetX - player.position.x) * 0.25;
-            player.position.y += (targetY - player.position.y) * 0.25;
-            if (dist(targetX, targetY,
-                player.position.x, player.position.y) < cell / 16) {
-                player.grid = createVector(player.target.x, player.target.y);
-                player.position = createVector(targetX, targetY);
+    // Kluge - probably worth refactor but wanted it done
+    if (mode === MODES.MAZE) {
+        // ptx/y = Player Target X/Y in grid coords
+        let ptx = player.target.x;
+        let pty = player.target.y;
+
+        // If the player grid coord is not the player target coord
+        if (player.grid.x !== ptx || player.grid.y !== pty) {
+            // tpx/y = Target Position X/Y in pixel coord
+            let tpx = ptx * cell + cell / 2;
+            let tpy = pty * cell + cell / 2;
+
+            // Ease the player position (pixel) toward the target position 
+            player.position.x += (tpx - player.position.x) * 0.25;
+            player.position.y += (tpy - player.position.y) * 0.25;
+
+            // If the distance from player position (pixel) to target position
+            // is less than 1/16 current cell size, force player grid coord/
+            // pixel position and set idle for additional input
+            if (dist(tpx, tpy, player.position.x, player.position.y) < cell / 16) {
+                player.grid = createVector(ptx, pty);
+                player.position = createVector(tpx, tpy);
                 player.state = STATE.IDLE;
             }
-        } else {
-            player.state = STATE.IDLE;
         }
     }
 }
@@ -133,8 +141,7 @@ function draw() {
 
         textSize(12);
         text("press 'x' to advance", CANVAS / 2, CANVAS / 3 * 2)
-    }
-    else if (mode === MODES.MAZE) {
+    } else if (mode === MODES.MAZE) {
         // Draw Maze - have to because background resets for player
         fill(0);
         for (let y = 0; y < maze.Size; y++) {
@@ -168,7 +175,7 @@ function draw() {
     }
 }
 
-// Function to hadle player movement via player.target property
+// Function to handle player movement via player.target property
 function movePlayer(dir) {
     if (player.state === STATE.IDLE){
         switch(dir) {
@@ -244,7 +251,6 @@ function keyReleased() {
 // MAZE MANAGEMENT
 function shuffleMaze() {
     // Increase the maze grid size and shuffle based on player grid position
-    // (This could change but currently Size returns a vector/sets a number)
     // Maze maxes out at MAX to keep scale reasonable
     if (maze.Size < MAX) {
         maze.Size += 2;
@@ -254,8 +260,11 @@ function shuffleMaze() {
     // Reset the cell size based on maze size
     cell = CANVAS / maze.Size;
 
+    // Set target size appropriate to the cell size
+    target.size = cell * 0.66;
+
     // Set player size appropriate to the cell size and reposition
-    player.size = cell * 0.66;
+    player.size = target.size;
     player.position = createVector(
         player.grid.x * cell + cell / 2,
         player.grid.y * cell + cell / 2
@@ -263,8 +272,11 @@ function shuffleMaze() {
 
     // Kluge - part of solution to bug with player movement after reset
     player.target = createVector(player.grid.x, player.grid.y);
+    player.state = STATE.IDLE;
 
     // Calculate the maze end furthest from player as the crow flies
+    // Could switch to most steps; would need either map traversal algorithm
+    // or modification to Maze.js to allow step counting
     let maxDistance = 0;
     for (let i = 0; i < maze.Ends.length; i++) {
         let end = maze.Ends[i];
@@ -277,7 +289,4 @@ function shuffleMaze() {
             maxDistance = targetDistance;
         }
     }
-
-    // Set target size appropriate to the cell size
-    target.size = player.size;
 }
