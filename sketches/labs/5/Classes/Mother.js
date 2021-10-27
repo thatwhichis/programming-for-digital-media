@@ -16,11 +16,11 @@ class Mother extends Character {
             [
                 {char: CHARACTER.MOTHER, text: "Oh hello, Love!"},
                 {char: CHARACTER.MOTHER, text: "I have a job for you this afternoon."},
-                {char: CHARACTER.LRRH, text: "Oh? What is it, Mother?"},
+                {char: CHARACTER.LRRH, text: "Oh? What is it, Mom?"},
                 {char: CHARACTER.MOTHER, text: "Please visit your Grandmother"},
                 {char: CHARACTER.MOTHER, text: "on the other side of the forest."},
                 {char: CHARACTER.MOTHER, text: "She's not been feeling herself lately."},
-                {char: CHARACTER.LRRH, text: "The forest frightens me, Mother..."},
+                {char: CHARACTER.LRRH, text: "The forest frightens me Mom..."},
                 {char: CHARACTER.LRRH, text: "The darkness is imposing."},
                 {char: CHARACTER.LRRH, text: "It feels full. Alive."},
                 {char: CHARACTER.LRRH, text: "Like things are watching me."},
@@ -33,14 +33,14 @@ class Mother extends Character {
                 {char: CHARACTER.MOTHER, text: "And remember:"},
                 {char: CHARACTER.MOTHER, text: "you're probably safe"},
                 {char: CHARACTER.MOTHER, text: "if you stay on the green path!"},
-                {char: CHARACTER.LRRH, text: "...Good tip. Thanks Mother."}
+                {char: CHARACTER.LRRH, text: "...Good tip. Thanks Mom."}
             ],
             [
                 {char: CHARACTER.MOTHER, text: "OH! What happened, Love?"},
-                {char: CHARACTER.LRRH, text: "...I was frightened, Mother."},
+                {char: CHARACTER.LRRH, text: "...I was frightened Mom."},
                 {char: CHARACTER.LRRH, text: "I heard a wolf howl."},
                 {char: CHARACTER.LRRH, text: "I dropped the basket and ran."},
-                {char: CHARACTER.LRRH, text: "...I'm so ashamed, Mother."},
+                {char: CHARACTER.LRRH, text: "...I'm so ashamed."},
                 {char: CHARACTER.LRRH, text: "...I wasn't strong enough."},
                 {char: CHARACTER.MOTHER, text: "Oh dear! Honey, I love you."},
                 {char: CHARACTER.MOTHER, text: "You don't have to go"},
@@ -48,7 +48,7 @@ class Mother extends Character {
                 {char: CHARACTER.LRRH, text: "I'm feeling better..."},
                 {char: CHARACTER.LRRH, text: "I think I can make it."},
                 {char: CHARACTER.MOTHER, text: "Here, I prepped another basket."},
-                {char: CHARACTER.LRRH, text: "Thank you Mother!"},
+                {char: CHARACTER.LRRH, text: "Thanks Mom!"},
                 {char: CHARACTER.MOTHER, text: "Remember to stay on the path!"},
             ]
         ];

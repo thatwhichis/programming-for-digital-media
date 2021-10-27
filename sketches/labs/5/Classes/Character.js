@@ -126,10 +126,13 @@ class Character {
     }
 
     update(advance) {
+        let distance = 10;
+        let front = createVector(this._position.x, this._position.y + (distance));
+
         // This is hideous; 1/10 would implement again
-        if (this._position.dist(player.Position) > 20) {
+        if (front.dist(player.Position) >= distance) {
             this._speaking = 0;
-        } else if (this._position.dist(player.Position) <= 20 &&
+        } else if (front.dist(player.Position) < distance &&
             !this._speaking &&
             this._current !== this._texts[this._convo].length - 1) {
                 this._speaking = 1;
