@@ -57,15 +57,19 @@ class Player extends Character {
         switch(value) {
             case INPUT.LEFT:
                 this._direction.x = (this._state < STATES.TALKING) ? this._direction.x - SPEED : 0;
+                tutorial = false;
             break;
             case INPUT.RIGHT:
                 this._direction.x = (this._state < STATES.TALKING) ? this._direction.x + SPEED : 0;
+                tutorial = false;
             break;
             case INPUT.UP:
                 this._direction.y = (this._state < STATES.TALKING) ? this._direction.y - SPEED : 0;
+                tutorial = false;
             break;
             case INPUT.DOWN:
                 this._direction.y = (this._state < STATES.TALKING) ? this._direction.y + SPEED : 0;
+                tutorial = false;
             break;
             case INPUT.ADVANCE:
                 this._advance = true;

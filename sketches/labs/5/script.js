@@ -22,7 +22,7 @@ const STATES = { GAME: 0, TALKING: 1 };
 const INPUT = { UP: 'w', DOWN: 's', LEFT: 'a', RIGHT: 'd', ADVANCE: 'x' }
 
 // Game variables
-let iterator, mode, player, subText, superText, timer, trees;
+let iterator, mode, player, subText, superText, timer, trees, tutorial;
 let characters = [];
 
 // Sound variables
@@ -94,6 +94,9 @@ function setup() {
 
     // Initialize trees
     trees = new Trees();
+
+    // Tutorial
+    tutorial = true;
 
     wind.setVolume(volume);
 
@@ -212,6 +215,12 @@ function draw() {
             // Separated say into a second loop so it always draws after chars/light
             for (let character of characters) {
                 character.say();
+            }
+
+            if (tutorial) {
+                textAlign(CENTER);
+                text("'w': up, 'a': left, 's': down, 'd': right", CANVAS_WIDTH / 2, CANVAS_HEIGHT * 3 / 4);
+                textAlign(LEFT);
             }
 
             // Change mode condition(s)
