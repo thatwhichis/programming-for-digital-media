@@ -1,4 +1,4 @@
-## Lab Portfolio
+## Programming for Digital Media - Lab Portfolio
 
 ### Lab 1
 
