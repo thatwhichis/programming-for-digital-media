@@ -42,7 +42,9 @@ Lab 4 was a single exercise in which we were encouraged to make a small game dem
 
 Lab 5 was a single exercise in which we worked with a partner to make a small game prototype desmontrating some basic RPG mechanics and telling a small story. For this exercise my partner and I drafted a brief [design document](https://docs.google.com/document/d/1tTvrSlwvx5JhYcAEUWlz7KNNStV1Aw1N8wNJmr1EniI/edit).
 
-[TODO](./sketches/labs/5/)
+(Click the thumbnail to open the p5.js JavaScript exercise implementation.)
+
+[![1-1](/images/20211027_1128_5.PNG){:height="100px" width="100px"}](./sketches/labs/5/)
 
 ## About me
 - [My Site](https://www.thatwhichismedia.com/)
