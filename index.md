@@ -48,9 +48,11 @@ Lab 5 was a single exercise in which we worked with a partner to make a small ga
 
 ### Final Project
 
-The final project was an exercise incorporating all aspects of programming covered in the class, including but not limited to: either user interaction or external data, classes, iteration, and appropriately named variables. For this exercise I implemented a prototype monster conflict resolution system based loosely on concepts from Pokémon and the Versu interactive storytelling platform; a monster appears, the user selects a representative monster, then the user selects actions for their monster to take to resolve the conflict with the other monster.
+The final project was an exercise incorporating all aspects of programming covered in the class, including but not limited to: either user interaction or external data, classes, iteration, and appropriately named variables. For this exercise I implemented a prototype monster conflict resolution system based loosely on concepts from [Pokémon](https://www.pokemon.com/) and the [Versu](https://versu.com/) interactive storytelling platform; a monster appears, the user selects a representative monster, then the user selects actions for their monster to take to resolve the conflict with the other monster.
 
-(Click the thumbnail to open the p5.js and Tracery JavaScript exercise implementation.)
+This prototype is rudimentary but intended for further expansion in the future.
+
+(Click the thumbnail to open the p5.js and [Tracery](https://tracery.io/) JavaScript exercise implementation.)
 
 [![final](/images/20211207_1449_final.PNG){:height="100px" width="100px"}](./sketches/labs/final/)
 
