@@ -1,0 +1,12 @@
+{
+    "name": "Musty",
+    "actions": {
+        "walk": ["mosey"],
+        "look": ["glance"],
+        "laugh": ["chuckle"]
+    },
+    "properties": {
+        "introversion": 2,
+        "energy": 2
+    }
+}

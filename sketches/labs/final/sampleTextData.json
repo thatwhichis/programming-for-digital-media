@@ -1,0 +1,68 @@
+{
+    "000000": {
+        "action": "[noun1:#name1#]A wild #noun1# approaches!",
+        "reaction": "[noun1:#name1#]A wild #noun1# approaches!",
+        "choices": [
+            {
+                "content": "[noun2:#name2#][action:#look#]#action.capitalize# at #noun2#.",
+                "clickTo": "000002"
+            },
+            {
+                "content": "[noun2:#name2#][action:#laugh#]#action.capitalize# at #noun2#.",
+                "clickTo": "000003"
+            }
+        ]
+    },
+    "000001": {
+        "action": "[noun1:#name1#][noun2:#name2#][action:#walk#]#noun1# #action.s# toward #noun2#.",
+        "reaction": "[noun1:#name1#][noun2:#name2#][action:#walk#]#noun2# was #action.ed# toward by #noun1#!",
+        "self": -1,
+        "other": 1,
+        "choices": [
+            {
+                "content": "[noun2:#name2#][action:#look#]#action.capitalize# at #noun2#.",
+                "clickTo": "000002"
+            },
+            {
+                "content": "[noun2:#name2#][action:#laugh#]#action.capitalize# at #noun2#.",
+                "clickTo": "000003"
+            }
+        ]
+    },
+    "000002": {
+        "action": "[noun1:#name1#][noun2:#name2#][action:#look#]#noun1# #action.s# at #noun2#.",
+        "reaction": "[noun1:#name1#][noun2:#name2#][action:#look#]#noun2# was #action.ed# at by #noun1#!",
+        "self": 1,
+        "other": 1,
+        "choices": [
+            {
+                "content": "[noun2:#name2#][action:#walk#]#action.capitalize# toward #noun2#.",
+                "clickTo": "000001"
+            },
+            {
+                "content": "[noun2:#name2#][action:#laugh#]#action.capitalize# at #noun2#.",
+                "clickTo": "000003"
+            }
+        ]
+    },
+    "000003": {
+        "action": "[noun1:#name1#][noun2:#name2#][action:#laugh#]#noun1# #action.s# at #noun2#.",
+        "reaction": "[noun1:#name1#][noun2:#name2#][action:#laugh#]#noun2# was #action.ed# at by #noun1#!",
+        "self": -1,
+        "other": -1,
+        "choices": [
+            {
+                "content": "[noun2:#name2#][action:#walk#]#action.capitalize# toward #noun2#.",
+                "clickTo": "000001"
+            },
+            {
+                "content": "[noun2:#name2#][action:#look#]#action.capitalize# at #noun2#.",
+                "clickTo": "000002"
+            },
+            {
+                "content": "[noun2:#name2#][action:#laugh#]#action.capitalize# at #noun2#.",
+                "clickTo": "000003"
+            }
+        ]
+    }
+}

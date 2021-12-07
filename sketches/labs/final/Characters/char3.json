@@ -1,0 +1,12 @@
+{
+    "name": "Malodorous",
+    "actions": {
+        "walk": ["slink"],
+        "look": ["peer"],
+        "laugh": ["snort"]
+    },
+    "properties": {
+        "introversion": 1,
+        "energy": 3
+    }
+}

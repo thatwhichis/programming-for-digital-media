@@ -25,10 +25,10 @@ Lab 3 was a series of exercises using arrays and objects to iterate on developme
 
 (Click a thumbnail to open the p5.js JavaScript exercise implementation.)
 
-[![1-1](/images/20210926_1531_3-1.PNG){:height="100px" width="100px"}](./sketches/labs/3/3_1/) 
-[![1-2](/images/20210926_1507_3-2.PNG){:height="100px" width="100px"}](./sketches/labs/3/3_2/) 
-[![1-3](/images/20210926_1445_3-3.PNG){:height="100px" width="100px"}](./sketches/labs/3/3_3/) 
-[![1-4](/images/20210926_1423_3-4.PNG){:height="100px" width="100px"}](./sketches/labs/3/3_4/)
+[![3-1](/images/20210926_1531_3-1.PNG){:height="100px" width="100px"}](./sketches/labs/3/3_1/) 
+[![3-2](/images/20210926_1507_3-2.PNG){:height="100px" width="100px"}](./sketches/labs/3/3_2/) 
+[![3-3](/images/20210926_1445_3-3.PNG){:height="100px" width="100px"}](./sketches/labs/3/3_3/) 
+[![3-4](/images/20210926_1423_3-4.PNG){:height="100px" width="100px"}](./sketches/labs/3/3_4/)
 
 ### Lab 4
 
@@ -36,7 +36,7 @@ Lab 4 was a single exercise in which we were encouraged to make a small game dem
 
 (Click the thumbnail to open the p5.js JavaScript exercise implementation.)
 
-[![1-1](/images/20211010_1809_4.PNG){:height="100px" width="100px"}](./sketches/labs/4/) 
+[![4](/images/20211010_1809_4.PNG){:height="100px" width="100px"}](./sketches/labs/4/) 
 
 ### Lab 5
 
@@ -44,7 +44,13 @@ Lab 5 was a single exercise in which we worked with a partner to make a small ga
 
 (Click the thumbnail to open the p5.js JavaScript exercise implementation.)
 
-[![1-1](/images/20211027_1128_5.PNG){:height="100px" width="100px"}](./sketches/labs/5/)
+[![5](/images/20211027_1128_5.PNG){:height="100px" width="100px"}](./sketches/labs/5/)
+
+### Final Project
+
+The final project was an exercise incorporating all aspects of programming covered in the class, including but not limited to: either user interaction or external data, classes, iteration, and appropriately named variables. For this exercise I implemented a prototype monster conflict resolution system based loosely on concepts from Pokémon and the Versu interactive storytelling platform; a monster appears, the user selects a representative monster, then the user selects actions for their monster to take to resolve the conflict with the other monster.
+
+[![final](/images/20211207_1449_final.PNG){:height="100px" width="100px"}](./sketches/labs/final/)
 
 ## About me
 - [My Site](https://www.thatwhichismedia.com/)

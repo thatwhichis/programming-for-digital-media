@@ -1,0 +1,12 @@
+{
+    "name": "Stinky",
+    "actions": {
+        "walk": ["saunter"],
+        "look": ["glare"],
+        "laugh": ["chortle"]
+    },
+    "properties": {
+        "introversion": 0,
+        "energy": 2
+    }
+}
